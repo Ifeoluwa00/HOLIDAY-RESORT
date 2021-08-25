@@ -6,12 +6,14 @@ import logger from 'morgan';
 import mongoose from 'mongoose';
 import config from 'config';
 
+import indexRouter from './index';
+
 const app = express();
 
 import registerRouter from './routes/userRouter';
 import loginRouter from './routes/loginRouter';
 import hotelRouter from './routes/hotelRouter';
-import indexRouter from './routes/indexRouter';
+// import indexRouter from './routes/indexRouter';
 
 const dbConfig: string = config.get('Users.dbConfig.dbName');
 
@@ -39,8 +41,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/hotels', hotelRouter);
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 
+app.use('/holidayresort', indexRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -62,5 +65,7 @@ app.use(function (
   res.status(err.status || 500);
   res.render('error');
 });
+
+// app.listen(3000, () => {});
 
 export default app;
