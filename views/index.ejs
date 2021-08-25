@@ -1,78 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Resort</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
   </head>
   <body>
-    <h1></h1>
-    <p>Welcome</p>
 
-    <form>
-      <input placeholder="location" id="location" name="location">
-
-      <button id="hotel" class="key">Hotel</button>
-      <button id="golf"class="key">Golf</button>
-      <button id="soccer"class="key">Soccer</button>
-      <button id="basketball"class="key">Basketball</button>
-      <button id="paintballing"class="key">Paintball</button>
-      <button id="skiing"class="key">Skiing</button>
-      <button id="windsurfing" class="key">Windsurfing</button>
-
-      <h1 id="message"></h1>
-    </form><br>
-
-    <% data?.map((obj) => { %>
-      <img src="<%= obj.photoRef %>" alt="">
-      <div class="div">
-        <p> Name: <%= obj.name %> </p>
-        <p> Address: <%= obj.address %> </p>
-        <p> Price: $<%= obj.price %> </p>
-        <p> Star Rating: <%= obj.rating %> </p>
+    <header>
+      <a href="#" class="brand">Holiday Resort</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Explore</a>
+          <a href="#">Gallery</a>
+         <a href="/register">sign up</a>
+          <a href="/login">sign in</a>
+        </div>
       </div>
-    <% }) %>
+    </header>
 
-    <script>
+    <section class="home">
+      <video class="video-slide active" src="./images/3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="./images/1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="./images/2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="./images/4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="./images/5.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>Wonderful.<br><span>Island</span></h1>
+        <p> Holiday resort is a vacation rental marketplace with more than 2,000,000 vacation rentals in 190 countries listed on its website. It operates through 50 websites in 23 languages through which it offers rentals of cabins, condos, castles, villas, barns, and farmhouses.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Camping.<br><span>Enjoy</span></h1>
+        <p>Holiday resort is a vacation rental marketplace with more than 2,000,000 vacation rentals in 190 countries listed on its website. It operates through 50 websites in 23 languages through which it offers rentals of cabins, condos, castles, villas, barns, and farmhouses.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Adventures.<br><span>Off Road</span></h1>
+        <p>Holiday Resort is a vacation rental marketplace with more than 2,000,000 vacation rentals in 190 countries listed on its website. It operates through 50 websites in 23 languages through which it offers rentals of cabins, condos, castles, villas, barns, and farmhouses.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Road Trip.<br><span>Together</span></h1>
+        <p>Holiday Resort</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Feel Nature.<br><span>Relax</span></h1>
+        <p>HomeAway is a vacation rental marketplace with more than 2,000,000 vacation rentals in 190 countries listed on its website. It operates through 50 websites in 23 languages through which it offers rentals of cabins, condos, castles, villas, barns, and farmhouses.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
 
-      const locate = document.querySelector('#location')
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
 
-      const hotelBtn = document.getElementById('hotel').addEventListener('click', (e)=>{
-        e.preventDefault()
-        const firstLocation = locate.value
-        window.location = `http://localhost:3000/holidayresort/?key=hotel&location=${firstLocation}`
-      })
-      document.querySelector('#golf').addEventListener('click', (e)=>{
-        e.preventDefault()
-        const firstLocation = locate.value
-        window.location = `http://localhost:3000/holidayresort/?key=golf&location=${firstLocation}`
-      })
-      document.querySelector('#soccer').addEventListener('click', (e)=>{
-        e.preventDefault()
-        const firstLocation = locate.value
-        window.location = `http://localhost:3000/holidayresort/?key=soccer&location=${firstLocation}`
-      })
-      document.querySelector('#basketball').addEventListener('click', (e)=>{
-        e.preventDefault()
-        const firstLocation = locate.value
-        window.location = `http://localhost:3000/holidayresort/?key=basketball&location=${firstLocation}`
-      })
-      document.querySelector('#paintballing').addEventListener('click', (e)=>{
-        e.preventDefault()
-        const firstLocation = locate.value
-        window.location = `http://localhost:3000/holidayresort/?key=paintballing&location=${firstLocation}`
-      })
-      document.querySelector('#skiing').addEventListener('click', (e)=>{
-        e.preventDefault()
-        const firstLocation = locate.value
-        window.location = `http://localhost:3000/holidayresort/?key=skiing&location=${firstLocation}`
-      })
-      document.querySelector('#windsurfing').addEventListener('click', (e)=>{
-        e.preventDefault()
-        const firstLocation = locate.value
-        window.location = `http://localhost:3000/holidayresort/?key=windsurfing&location=${firstLocation}`
-      })
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
 
-    </script>
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
 
-  </body>
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+
+  </script>
+
+</body>
 </html>
+
+    

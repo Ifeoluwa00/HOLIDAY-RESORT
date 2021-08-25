@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     if (error) {
       return res.send({ error });
     }
-    res.render('index', {data: data || [], key, location});
+    res.render('location-router', {data: data || [], key, location});
   });
 });
 
