@@ -12,7 +12,7 @@ interface Use {
 }
 //https://maps.googleapis.com/maps/api/place/textsearch/json?query=123%20main%20street&location=42.3675294,-71.186966&radius=10000&key=${apiKey}
 // const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-75.1327,40.0115&radius=1500&type=restaurant&keyword=cruise&key=${apiKey}`;
-export let display: {}[];
+let display: {}[];
 
 export const places = (
   location: string,
@@ -50,8 +50,6 @@ export const places = (
           console.log(temp)
           output.push(temp);
         }
-
-        // photoRef.push(results[i]?.photos[0]?.photo_reference);
 
       }
 

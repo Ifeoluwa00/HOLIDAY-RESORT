@@ -21,8 +21,5 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/payment', (req, res) => {
-  res.render('cart')
-})
 
 export = router;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1></h1>
+    <p>Welcome</p>
+
+    <form>
+      <input placeholder="location" id="location" name="location">
+      <input placeholder="activity" id="key" name="key">
+      <button type="submit">Search</button>
+
+      <h1 id="message"></h1>
+    </form><br>
+
+    <% data?.map((obj) => { %>
+      <img src="<%= obj.photoRef %>" alt="">
+      <div class="div">
+        <p> Name: <%= obj.name %> </p>
+        <p> Address: <%= obj.address %> </p>
+        <p> Star Rating: <%= obj.rating %> </p>
+      </div>
+    <% }) %>
+
+    <script>
+      const locationForm = document.querySelector('form')
+      const locate = document.querySelector('#location')
+      const keyLocate = document.querySelector('#key')
+      const message = document.querySelector('#message')
+
+      locationForm.addEventListener('submit', (event) => {
+      event.preventDefault()
+
+      const location = locate.value
+      const key = keyLocate.value
+
+
+
+      window.location = `http://localhost:3000/holidayresort/?key=${key}&location=${location}`
+    })
+      message.textContent = `${key} in ${location}`
+
+    </script>
+
+  </body>
+</html>
