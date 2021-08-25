@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       return res.send({ error });
     }
   
-    res.render('location', { data: data || [], key, location });
+    res.render('location-selection', { data: data || [], key, location });
   });
 });
 

@@ -17,11 +17,11 @@ let display: {}[];
 export const places = (
   location: string,
   find: string,
-  callback: (error: string | undefined, data: undefined | Use[]) => void,
+  callback: (error: string | undefined, data: undefined | Use[]) => void
 ) => {
   const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${find}+${location}&key=${apiKey}`;
 
-  request({ url, json: true }, async (error: string, {body: {results}}) => {
+  request({ url, json: true }, async (error: string, { body: { results } }) => {
     //console.log(response.body.results[0].photos[0].html_attributions[0]);
     if (error) {
       callback('Unable to connect', undefined);
@@ -30,8 +30,7 @@ export const places = (
       const photoRef = [];
       // console.log(response.body.results[7])
       for (let i = 0; i < results.length; i++) {
-        if(results[i].photos){
-
+        if (results[i].photos) {
           let temp: {
             name: string;
             address: string;
@@ -43,14 +42,15 @@ export const places = (
             name: results ? results[i]?.name : '',
             address: results ? results[i]?.formatted_address : '',
             rating: results ? results[i]?.rating : '',
-            photoRef: results[i] ? await img(results[i]?.photos[0]?.photo_reference) : '',
+            photoRef: results[i]
+              ? await img(results[i]?.photos[0]?.photo_reference)
+              : '',
             place_id: results ? results[i]?.place_id : '',
             htmlAtt: results ? results[i]?.photos[0]?.html_attributions : '',
           };
-          console.log(temp)
+          console.log(temp);
           output.push(temp);
         }
-
       }
 
       display = output.sort((a, b) => b.rating - a.rating);
@@ -63,15 +63,12 @@ export const places = (
 // places('philadelphia', 'hotels', (error, response) => {});
 
 async function img(input: string) {
-  if(input){
-
+  if (input) {
     const placePhotos = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${input}&key=${apiKey}`;
 
     let val = await fetch(placePhotos);
     return val.url;
-  }else {
-    return ''
+  } else {
+    return '';
   }
-
 }
-
