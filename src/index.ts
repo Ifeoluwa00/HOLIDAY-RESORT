@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { places } from '../src/utils/places';
+import { places } from './utils/places';
 
 const router = Router();
 interface Use {
