@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import validator from 'validator';
 import bcrypt from 'bcryptjs';
 export interface IUser extends Document {
+  name: string
   email: string;
   password: string;
   passwordConfirm: string | undefined;
@@ -32,13 +33,7 @@ const userSchema = new mongoose.Schema<IUser>({
   passwordResetToken: String,
   passwordResetExpires: Date,
 });
-//fire a function after doc saved to db
-// userSchema.post('save', function (doc, next) {
-//   console.log('new user was created & saved', doc);
-//   next();
-// });
 
-// fire a function before doc saved to db
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
   this.password = await bcrypt.hash(this.password, 12);

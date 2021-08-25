@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import User from './../models/usersModel';
+import User from '../models/usersModel';
 import { Request, Response } from 'express';
 // import { HttpError } from 'http-errors';
 import jwt from 'jsonwebtoken';

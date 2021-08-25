@@ -62,10 +62,10 @@ export const places = (
 
 // places('philadelphia', 'hotels', (error, response) => {});
 
-async function img(url: string) {
-  if(url){
+async function img(input: string) {
+  if(input){
 
-    const placePhotos = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${url}&key=${apiKey}`;
+    const placePhotos = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${input}&key=${apiKey}`;
 
     let val = await fetch(placePhotos);
     return val.url;

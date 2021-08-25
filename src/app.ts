@@ -6,13 +6,18 @@ import logger from 'morgan';
 import mongoose from 'mongoose';
 import config from 'config';
 
-import indexRouter from './index';
+// import location from './index';
 
 const app = express();
+import indexRouter from './routes/indexRouter';
 
 import registerRouter from './routes/userRouter';
 import loginRouter from './routes/loginRouter';
-import hotelRouter from './routes/hotelRouter';
+import aboutRouter from './routes/aboutRouter';
+import memberRouter from './routes/memberRouter';
+import locationRouter from './routes/locationRouter';
+
+
 // import indexRouter from './routes/indexRouter';
 
 const dbConfig: string = config.get('Users.dbConfig.dbName');
@@ -38,9 +43,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
+
+app.use('/location-selection', locationRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
-app.use('/hotels', hotelRouter);
+app.use('/about', aboutRouter);
+app.use('/holidayresort', indexRouter);
+app.use('/membership', memberRouter);
+
+
 // app.use('/', indexRouter);
 
 app.use('/holidayresort', indexRouter);
