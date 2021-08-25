@@ -4,6 +4,8 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
+import indexRouter from './index';
+
 const app = express();
 
 // view engine setup
@@ -16,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
+app.use('/holidayresort', indexRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -26,7 +29,7 @@ app.use(function (
   err: createError.HttpError,
   req: express.Request,
   res: express.Response,
-  _next: express.NextFunction
+  _next: express.NextFunction,
 ) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -36,5 +39,7 @@ app.use(function (
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen(3000, () => {});
 
 export default app;

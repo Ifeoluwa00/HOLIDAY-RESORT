@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1></h1>
+    <p>Welcome</p>
+
+    <form>
+      <input placeholder="location" id="location" name="location">
+
+      <button id="hotel" class="key">Hotel</button>
+      <button id="golf"class="key">Golf</button>
+      <button id="soccer"class="key">Soccer</button>
+      <button id="basketball"class="key">Basketball</button>
+      <button id="paintballing"class="key">Paintball</button>
+      <button id="skiing"class="key">Skiing</button>
+      <button id="windsurfing" class="key">Windsurfing</button>
+
+      <h1 id="message"></h1>
+    </form><br>
+
+    <% data?.map((obj) => { %>
+      <img src="<%= obj.photoRef %>" alt="">
+      <div class="div">
+        <p> Name: <%= obj.name %> </p>
+        <p> Address: <%= obj.address %> </p>
+        <p> Price: $<%= obj.price %> </p>
+        <p> Star Rating: <%= obj.rating %> </p>
+      </div>
+    <% }) %>
+
+    <script>
+
+      const locate = document.querySelector('#location')
+
+      const hotelBtn = document.getElementById('hotel').addEventListener('click', (e)=>{
+        e.preventDefault()
+        const firstLocation = locate.value
+        window.location = `http://localhost:3000/holidayresort/?key=hotel&location=${firstLocation}`
+      })
+      document.querySelector('#golf').addEventListener('click', (e)=>{
+        e.preventDefault()
+        const firstLocation = locate.value
+        window.location = `http://localhost:3000/holidayresort/?key=golf&location=${firstLocation}`
+      })
+      document.querySelector('#soccer').addEventListener('click', (e)=>{
+        e.preventDefault()
+        const firstLocation = locate.value
+        window.location = `http://localhost:3000/holidayresort/?key=soccer&location=${firstLocation}`
+      })
+      document.querySelector('#basketball').addEventListener('click', (e)=>{
+        e.preventDefault()
+        const firstLocation = locate.value
+        window.location = `http://localhost:3000/holidayresort/?key=basketball&location=${firstLocation}`
+      })
+      document.querySelector('#paintballing').addEventListener('click', (e)=>{
+        e.preventDefault()
+        const firstLocation = locate.value
+        window.location = `http://localhost:3000/holidayresort/?key=paintballing&location=${firstLocation}`
+      })
+      document.querySelector('#skiing').addEventListener('click', (e)=>{
+        e.preventDefault()
+        const firstLocation = locate.value
+        window.location = `http://localhost:3000/holidayresort/?key=skiing&location=${firstLocation}`
+      })
+      document.querySelector('#windsurfing').addEventListener('click', (e)=>{
+        e.preventDefault()
+        const firstLocation = locate.value
+        window.location = `http://localhost:3000/holidayresort/?key=windsurfing&location=${firstLocation}`
+      })
+
+    </script>
+
   </body>
 </html>
