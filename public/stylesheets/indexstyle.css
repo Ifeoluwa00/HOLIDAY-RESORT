@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap");
 /* membership import */
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
@@ -13,9 +13,11 @@
     padding: 0;
     font-family: 'Dosis', sans-serif;;
 }
-p{
-  margin: 0;
-} */
+*/
+p {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+}
 .header_wrapper {
   background: linear-gradient(
       rgba(136, 107, 107, 0.8),
@@ -101,7 +103,7 @@ span.explore_btn:hover {
   font-size: 1.7em;
 }
 .destination_text {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 5px;
@@ -139,7 +141,7 @@ span.explore_btn:hover {
 .countries-head {
   margin-left: 30px;
   font-size: 35px;
-  font-size: 'Roboto', sans-serif;
+  font-size: "Roboto", sans-serif;
   font-weight: 300;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -168,7 +170,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../countries/cairo.jpeg');
+    url("../countries/cairo.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -185,7 +187,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../countries/cape-town.jpeg');
+    url("../countries/cape-town.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -198,7 +200,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../countries/dubai.jpeg');
+    url("../countries/dubai.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -211,7 +213,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../countries/fuerventura.jpeg');
+    url("../countries/fuerventura.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -224,7 +226,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../countries/london.jpeg');
+    url("../countries/london.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -237,7 +239,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../countries/mauritius.jpeg');
+    url("../countries/mauritius.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -259,7 +261,7 @@ span.explore_btn:hover {
 .activities-head {
   margin-left: 30px;
   font-size: 35px;
-  font-size: 'Roboto', sans-serif;
+  font-size: "Roboto", sans-serif;
   font-weight: 300;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -272,12 +274,16 @@ span.explore_btn:hover {
   flex-direction: row;
 }
 .activity {
+  margin-bottom: 10px;
   border: none;
   border-radius: 7px;
   width: 20%;
   height: 300px;
   margin: 10px;
   text-align: center;
+  box-sizing: border-box;
+  height: 350px;
+  width: 500px;
   /* cursor: pointer; */
 }
 .activity-pic {
@@ -293,7 +299,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/activities/astroturf.jpeg');
+    url("../images/activities/astroturf.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -306,7 +312,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/activities/basketball2.jpeg');
+    url("../images/activities/basketball2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -319,7 +325,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/activities/beach-soccer.jpeg');
+    url("../images/activities/beach-soccer.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -332,7 +338,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/activities/coastline-walk.jpeg');
+    url("../images/activities/coastline-walk.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -345,7 +351,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/activities/golf.jpeg');
+    url("../images/activities/golf.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -358,7 +364,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/activities/jet-skiing.jpeg');
+    url("../images/activities/jet-skiing.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -371,7 +377,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/activities/kidsplay.jpeg');
+    url("../images/activities/kidsplay.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -384,7 +390,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/activities/paintball.jpeg');
+    url("../images/activities/paintball.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -397,7 +403,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/activities/volleyball.jpeg');
+    url("../images/activities/volleyball.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -410,7 +416,7 @@ span.explore_btn:hover {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/activities/windsurfing.jpeg');
+    url("../images/activities/windsurfing.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -418,6 +424,7 @@ span.explore_btn:hover {
 }
 /* footer */
 .footer {
+  /* margin-top: 50px; */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -436,8 +443,10 @@ span.explore_btn:hover {
   width: 100%;
   justify-content: center;
   align-items: center;
+  font-family: "Roboto", sans-serif;
   /* margin: auto; */
 }
+
 .foot {
   /* width: 30%; */
   display: flex;
@@ -494,7 +503,7 @@ p.terms {
   font-size: 2em;
 }
 .membership-pricing {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: "Raleway", Arial, sans-serif;
   color: #000000;
   text-align: center;
   font-size: 16px;
@@ -541,7 +550,7 @@ p.terms {
   padding: 0px 10px 20px;
 }
 .membership-pricing .plan-price {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   font-weight: 800;
   font-size: 2.4em;
   color: #34495e;

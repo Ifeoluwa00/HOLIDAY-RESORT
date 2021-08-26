@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap");
 /* p{
     margin: 0px;
 } */
@@ -7,7 +7,11 @@ body {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
+}
+p {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
 }
 
 .header_wrapper {
@@ -17,7 +21,7 @@ body {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/water-165219_1280.jpg');
+    url("../images/water-165219_1280.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -26,7 +30,7 @@ body {
 }
 
 .demacating-pic {
-  background-image: url('../images/color-pattern.jpg');
+  background-image: url("../images/color-pattern.jpg");
   height: 100px;
   margin: 0;
 }
@@ -36,7 +40,7 @@ a {
 }
 .menu-btn a {
   font-size: 20px;
-  font-family: 'poppins' sans-serif;
+  font-family: "poppins" sans-serif;
 
   letter-spacing: 1px;
   color: white;
@@ -53,7 +57,7 @@ a {
   align-items: center;
   padding: 10px;
   font-size: 20px;
-  font-family: 'poppins' sans-serif;
+  font-family: "poppins" sans-serif;
   color: white;
   text-decoration: none;
   transition: linear all 0.5s;
@@ -71,7 +75,7 @@ a {
   justify-content: center;
 }
 .main_point {
-  font-family: 'poppins' sans-serif;
+  font-family: "poppins" sans-serif;
   color: white;
   font-size: 70px;
   letter-spacing: 5px;
@@ -102,7 +106,7 @@ a {
 .text_head {
   margin-left: 30px;
   font-size: 35px;
-  font-size: 'Roboto', sans-serif;
+  font-size: "Roboto", sans-serif;
   font-weight: 300;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -159,7 +163,7 @@ a {
   transition: linear all 0.6s;
   font-size: 20px;
   letter-spacing: 1px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-align: center;
 }
 .activity:hover {
@@ -209,7 +213,7 @@ a {
 
 .features {
   margin: 20px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 1.3em;
   margin-bottom: 20px;
 }
@@ -241,11 +245,11 @@ a {
 
 .pic-left {
   width: 10%;
-  background-image: url('../images/plant-pattern.jpg');
+  background-image: url("../images/plant-pattern.jpg");
 }
 .pic-right {
   width: 10%;
-  background-image: url('../images/plant-pattern.jpg');
+  background-image: url("../images/plant-pattern.jpg");
 }
 
 .chief {
@@ -277,10 +281,11 @@ a {
   width: 100%;
   background-color: #eaeff2;
   padding: 10px;
-  font-family: 'Roboto' sans-serif;
+  font-family: "Roboto" sans-serif;
   font-weight: 300px;
 }
 
+/* footer */
 /* footer */
 .footer {
   /* margin-top: 50px; */
@@ -360,7 +365,7 @@ p.terms {
   font-size: 2em;
 }
 .membership-pricing {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: "Raleway", Arial, sans-serif;
   color: #000000;
   text-align: center;
   font-size: 16px;
@@ -407,7 +412,7 @@ p.terms {
   padding: 0px 10px 20px;
 }
 .membership-pricing .plan-price {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   font-weight: 800;
   font-size: 2.4em;
   color: #34495e;
