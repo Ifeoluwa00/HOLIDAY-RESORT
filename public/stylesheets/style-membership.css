@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 /* membership import */
 /* @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
@@ -11,7 +12,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   font-family: 'Dosis', sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .header_wrapper {
   background: linear-gradient(
@@ -20,7 +21,7 @@ body {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('../images/homepage4.jpeg');
+    url('../images/atoll-2179102.jpg');
   background-repeat: no-repeat;
   background-position: center;
   height: 80vh;
@@ -32,10 +33,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #0096c7;
-  /* position: sticky;
-    z-index: 100;
-    top: 0; */
+  background: transparent;
 }
 .nav-container {
   display: flex;
@@ -116,6 +114,15 @@ span.explore_btn:hover {
 .input-destination:hover {
   text-decoration: underline;
 }
+.main_text {
+  margin-top: 70px;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'popping', sans-serif;
+  initial-letter: 5px;
+  font-weight: 300;
+}
+
 /* countries */
 /* .countries {
     width: 90%;
@@ -299,10 +306,8 @@ span.explore_btn:hover {
   width: 100%;
   justify-content: center;
   align-items: center;
-  /* margin: auto; */
 }
 .foot {
-  /* width: 30%; */
   display: flex;
   flex-direction: column;
   margin-right: 40px;
@@ -364,9 +369,6 @@ p.terms {
   width: 100%;
   max-width: 1000px;
   margin: 40px 5px;
-  /* display: flex;
-  justify-content: center;
-  align-content: center; */
   margin: auto;
   margin-top: 150px;
 }
@@ -489,6 +491,60 @@ p.terms {
   .membership-pricing .featured {
     margin-top: 0;
   }
+}
+
+/* payment form styling */
+/* #payform  */
+.main-content {
+  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+}
+section.main-content {
+  width: 20%;
+  margin: 30px;
+  margin-left: 35%;
+  padding: 10px;
+}
+.membership-listing {
+  display: flex;
+  flex-direction: column;
+}
+.form_container {
+  display: flex;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background: #e9c46a;
+}
+section button {
+  background: black;
+  color: white;
+}
+
+.class {
+  margin-bottom: 10px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.input-field {
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 35%;
 }
 /* membership pricing responsiveness */
 @media only screen and (max-width: 440px) {

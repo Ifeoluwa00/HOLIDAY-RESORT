@@ -21,7 +21,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 70vh;
+  margin-bottom: 100px;
 }
 a {
   text-decoration: none;
@@ -29,7 +30,7 @@ a {
 .menu-btn a {
   font-size: 20px;
   font-family: 'poppins' sans-serif;
-  font-style: 'cursive';
+
   letter-spacing: 1px;
   color: white;
 }
@@ -208,6 +209,37 @@ a {
 
 .rating {
   color: red;
+}
+
+/* request rendering */
+.request {
+  margin: 10px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+
+  /* flex: 1; */
+  overflow: hidden;
+  justify-content: center;
+  align-content: center;
+}
+.chief {
+  width: 25%;
+  margin: 10px;
+  border-radius: 10px;
+  align-items: center;
+}
+/* .size {
+  width: 50%;
+  height: 50%;
+  position: relative;
+}
+.pic {
+  position: absolute;
+} */
+
+.item {
+  margin-bottom: 10px;
 }
 
 /* footer */
