@@ -38,6 +38,7 @@ export const places = (
             photoRef: string | Promise<string>;
             place_id: string;
             htmlAtt: string;
+            price: number | string
           } = {
             name: results ? results[i]?.name : '',
             address: results ? results[i]?.formatted_address : '',
@@ -47,6 +48,7 @@ export const places = (
               : '',
             place_id: results ? results[i]?.place_id : '',
             htmlAtt: results ? results[i]?.photos[0]?.html_attributions : '',
+            price: results ? await cost(results[i]?.rating, find) : ''
           };
           console.log(temp);
           output.push(temp);
@@ -71,4 +73,33 @@ async function img(input: string) {
   } else {
     return '';
   }
+}
+
+async function cost(rating: number, key: string) {
+  let price;
+  if(rating === null){
+    price = 'Not available'
+  }
+  if (key === 'Hotel' || key === 'Hotels') {
+    price = (rating * 50) + 30;
+  } else if (key === 'Basket ball') {
+    price = (rating * 25) + 15;
+  } else if (key === 'Soccer' || key === 'Cinema') {
+    price = (rating * 15) + 15;
+  } else if (key === 'Skiing' || key === 'Skiing') {
+    price = (rating * 40) + 30;
+  } else if (key === 'Kids-play' || key === 'Kids play') {
+    price = (rating * 10) + 20;
+  } else if (
+    key === 'paintball' ||
+    key === 'paintballing' ||
+    key === 'paint-ball'
+  ) {
+    price = (rating * 10) + 10;
+  } else if (key === 'volleyball' || key === 'volley ball') {
+    price = (rating * 10) + 10;
+  } else {
+    price = (rating * 5 )+ 10
+  }
+  return price;
 }

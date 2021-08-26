@@ -15,6 +15,7 @@ import memberRouter from './routes/memberRouter';
 import locationRouter from './routes/locationRouter';
 import loginUserRouter from './routes/loginUsersIndexRouter';
 import logOutRouter from './routes/logoutRouter';
+import plantRouter from './routes/planRouter';
 // require('dotenv').config();
 mongoose
   .connect(process.env.DBNAME_URL!, {
@@ -45,6 +46,8 @@ app.use('/holidayresort', indexRouter);
 app.use('/membership', memberRouter);
 app.use('/loginusers', loginUserRouter);
 app.use('/logout', logOutRouter);
+app.use('/plan', plantRouter);
+
 // app.use('/', indexRouter);
 app.use('/holidayresort', indexRouter);
 // catch 404 and forward to error handler
