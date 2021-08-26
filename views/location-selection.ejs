@@ -48,22 +48,30 @@
         </div>
       </div>
 
-      <div class="request">
-          <% data?.map((obj) => { %>
-            <div class="chief">
-              <div class="size">
-          <img class = "pic" src="<%= obj.photoRef %>" alt="" />
-        </div>
-          <div class="div">
-            <p class="item">Name: <%= obj.name %></p>
-            <p class="item">Address: <%= obj.address %></p>
-            <p class="item">Star Rating: <%= obj.rating %></p>
-            <p class="item">Price: $ <%= obj.price %></p>
+      <!-- <div class="demacating-pic"></div> -->
+
+          <div class="request">
+              <% data?.map((obj) => { %>
+                <div class="request-contain">
+                    <div class="pic-left">
+                    </div>
+                    <div class="chief">
+                        <div class="size">
+                          <img class = "pic" src="<%= obj.photoRef %>" alt="" />
+                        </div>
+                        <div class="div">
+                          <p class="item">Name: <%= obj.name %></p>
+                          <p class="item">Address: <%= obj.address %></p>
+                          <p class="item">Star Rating: <%= obj.rating %></p>
+                          <p class="item">Price: $ <%= obj.price %></p>
+                      </div>
+                  </div>
+                  <div class="pic-right">
+                  </div>
+                </div>
+              <% }) %>
           </div>
-        </div>
-          <% }) %>
-      </div>
-    </div>
+       </div>
 
     <footer>
       <!-- Footer -->
