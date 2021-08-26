@@ -6,11 +6,62 @@ body {
   height: 100%;
   width: 100%;
   font-size: 18px;
-  font-family: 'roboto', 'sans-serif' /*font change in th eabout page*/
+  font-family: 'roboto', 'sans-serif'; /*font change in th eabout page*/
 }
 p {
   font-size: 1.4em;
 }
+
+a {
+  text-decoration: none;
+}
+
+.ejs_header {
+  display: flex;
+  z-index: 99;
+  width: 100%;
+  justify-content: space-between;
+  align-content: center;
+  background-color: teal;
+  color: #fff;
+}
+
+.brand {
+  color: white;
+  text-decoration: none;
+}
+
+.brand a {
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.navv {
+  margin-right: 10px;
+}
+.navigation-items {
+  display: flex;
+  flex-direction: row;
+}
+
+/* .brand {
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+} */
+
+.navigation-items a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-btn {
+  background-color: red;
+}
+
 .write-up {
   font-size: 1em;
   font-family: 'poppins' sans-serif;
