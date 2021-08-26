@@ -38,7 +38,7 @@ export const places = (
             photoRef: string | Promise<string>;
             place_id: string;
             htmlAtt: string;
-            price: number | string
+            price: string | number
           } = {
             name: results ? results[i]?.name : '',
             address: results ? results[i]?.formatted_address : '',
@@ -48,7 +48,7 @@ export const places = (
               : '',
             place_id: results ? results[i]?.place_id : '',
             htmlAtt: results ? results[i]?.photos[0]?.html_attributions : '',
-            price: results ? await cost(results[i]?.rating, find) : ''
+            price: results ? await cost(results[i].rating, find) : ''
           };
           console.log(temp);
           output.push(temp);
@@ -80,26 +80,28 @@ async function cost(rating: number, key: string) {
   if(rating === null){
     price = 'Not available'
   }
-  if (key === 'Hotel' || key === 'Hotels') {
-    price = (rating * 50) + 30;
-  } else if (key === 'Basket ball') {
-    price = (rating * 25) + 15;
-  } else if (key === 'Soccer' || key === 'Cinema') {
+  if (key === 'hotel') {
+    price = rating * 30 + 30;
+  }else if (key === 'basketball') {
+    price = rating * 10 + 15;
+  }else if (key === 'soccer') {
     price = (rating * 15) + 15;
-  } else if (key === 'Skiing' || key === 'Skiing') {
+  } else if (key === 'Skiing') {
     price = (rating * 40) + 30;
-  } else if (key === 'Kids-play' || key === 'Kids play') {
+  } else if (key === 'Kids-play') {
     price = (rating * 10) + 20;
   } else if (
-    key === 'paintball' ||
-    key === 'paintballing' ||
-    key === 'paint-ball'
+    key === 'paintballing'
   ) {
     price = (rating * 10) + 10;
-  } else if (key === 'volleyball' || key === 'volley ball') {
+  } else if (key === 'volleyball') {
     price = (rating * 10) + 10;
-  } else {
-    price = (rating * 5 )+ 10
+  } else if(key === 'windsurfing'){
+    price = rating * 7.5 + 18
+  }else if(key === 'cinema') {
+    price = Math.floor(rating * 2 + 10)
+  }else {
+    price = rating * 5 + 10
   }
   return price;
 }

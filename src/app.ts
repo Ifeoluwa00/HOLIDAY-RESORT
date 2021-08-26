@@ -27,7 +27,7 @@ mongoose
   .then(() => {
     console.log('Database connected succesful!');
   })
-  .catch((error) => {
+  .catch((error: { message: any; }) => {
     console.log(error.message);
   });
 // view engine setup
