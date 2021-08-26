@@ -22,8 +22,15 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 70vh;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
+
+.demacating-pic {
+  background-image: url('../images/color-pattern.jpg');
+  height: 100px;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -213,8 +220,8 @@ a {
 
 /* request rendering */
 .request {
-  margin: 10px;
-  width: 90%;
+  /* margin: 10px; */
+  width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -223,23 +230,55 @@ a {
   justify-content: center;
   align-content: center;
 }
+
+.request-contain {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+}
+
+.pic-left {
+  width: 10%;
+  background-image: url('../images/plant-pattern.jpg');
+}
+.pic-right {
+  width: 10%;
+  background-image: url('../images/plant-pattern.jpg');
+}
+
 .chief {
-  width: 25%;
-  margin: 10px;
+  width: 50%;
+  /* margin: 10px; */
   border-radius: 10px;
   align-items: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  align-items: center;
+  margin: auto;
 }
 /* .size {
   width: 50%;
   height: 50%;
   position: relative;
-}
+}*/
 .pic {
-  position: absolute;
-} */
+  border-radius: 20px;
+}
 
 .item {
   margin-bottom: 10px;
+}
+.div {
+  align-items: center;
+  border-radius: 20px 20px 20px 20px;
+  margin: 20px;
+  width: 100%;
+  background-color: #eaeff2;
+  padding: 10px;
+  font-family: 'Roboto' sans-serif;
+  font-weight: 300px;
 }
 
 /* footer */
