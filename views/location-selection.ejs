@@ -16,7 +16,7 @@
           <div class="navigation-items">
             <a href="/holidayresort">Home</a>
             <a href="/about">About</a>
-            <a href="/views/location-selection.ejs">Explore</a>
+            <a href="/plan">Plan</a>
           </div>
           <!-- </div> -->
         </div>
@@ -26,7 +26,7 @@
           <form class="form_item">
             <input
               class="serach_bar"
-              placeholder="location"
+              placeholder="Enter a city"
               id="location"
               name="location"
             />
@@ -34,13 +34,14 @@
               <button id="hotel" class="key">Hotel</button>
               <button id="golf" class="key">Golf</button>
               <button id="soccer" class="key">Soccer</button>
-              <button id="basketball" class="key">Basketball</button>
-              <button id="paintballing" class="key">Paintball</button>
+              <button id="basketball" class="key">Basket-ball</button>
+              <button id="paintballing" class="key">Paint-ball</button>
               <button id="skiing" class="key">Skiing</button>
-              <button id="windsurfing" class="key">Windsurfing</button>
+              <button id="windsurfing" class="key">Wind-surfing</button>
               <button id="Astroturf-Pitch" class="key">Astroturf-Pitch</button>
-              <button id="volleyball" class="key">Volleyball</button>
+              <button id="volleyball" class="key">Volley-ball</button>
               <button id="kids-play" class="key">Kids-play</button>
+              <button id="cinema" class="key">Cinema</button>
               
             </div>
           </form>
@@ -56,8 +57,8 @@
           <div class="div">
             <p class="item">Name: <%= obj.name %></p>
             <p class="item">Address: <%= obj.address %></p>
-            <p class="item">Price: $<%= obj.price %></p>
             <p class="item">Star Rating: <%= obj.rating %></p>
+            <p class="item">Price: $ <%= obj.price %></p>
           </div>
         </div>
           <% }) %>
@@ -153,6 +154,11 @@
         e.preventDefault();
         const firstLocation = locate.value;
         window.location = `http://localhost:3001/location-selection/?key=kids-play&location=${firstLocation}`;
+      });
+      document.getElementById('cinema').addEventListener('click', (e) => {
+        e.preventDefault();
+        const firstLocation = locate.value;
+        window.location = `http://localhost:3001/location-selection/?key=cinema&location=${firstLocation}`;
       });
     </script>
   </body>
