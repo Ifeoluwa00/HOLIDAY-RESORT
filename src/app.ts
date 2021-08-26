@@ -6,7 +6,7 @@ import logger from "morgan";
 import mongoose from "mongoose";
 // import config from "config";
 // import location from './index';
-const app = express();
+import dotenv from 'dotenv';
 import indexRouter from "./routes/indexRouter";
 import registerRouter from "./routes/userRouter";
 import loginRouter from "./routes/loginRouter";
@@ -18,20 +18,14 @@ import logOutRouter from "./routes/logoutRouter";
 import plantRouter from "./routes/planRouter";
 import locationRouter2 from "./routes/locationRouter2";
 import planRouter2 from "./routes/plan2Router";
-// require('dotenv').config();
-mongoose
-  .connect(process.env.DBNAME_URL!, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Database connected succesful!");
-  })
-  .catch((error: { message: any }) => {
-    console.log(error.message);
-  });
+
+dotenv.config();
+const app = express();
+mongoose.connect(process.env.DBNAME_URL || 'mongodb://localhost/hotels', {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+}).then(() => console.log("Database connected succesful!")).catch((error) => console.log(error));
 // view engine setup
 app.set("views", path.join(__dirname, "..", "views"));
 app.set("view engine", "ejs");
