@@ -12,16 +12,16 @@ interface Use {
 }
 //https://maps.googleapis.com/maps/api/place/textsearch/json?query=123%20main%20street&location=42.3675294,-71.186966&radius=10000&key=${apiKey}
 // const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-75.1327,40.0115&radius=1500&type=restaurant&keyword=cruise&key=${apiKey}`;
-export let display: {}[];
+let display: {}[];
 
 export const places = (
   location: string,
   find: string,
-  callback: (error: string | undefined, data: undefined | Use[]) => void,
+  callback: (error: string | undefined, data: undefined | Use[]) => void
 ) => {
   const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${find}+${location}&key=${apiKey}`;
 
-  request({ url, json: true }, async (error: string, {body: {results}}) => {
+  request({ url, json: true }, async (error: string, { body: { results } }) => {
     //console.log(response.body.results[0].photos[0].html_attributions[0]);
     if (error) {
       callback('Unable to connect', undefined);
@@ -30,8 +30,7 @@ export const places = (
       const photoRef = [];
       // console.log(response.body.results[7])
       for (let i = 0; i < results.length; i++) {
-        if(results[i].photos){
-
+        if (results[i].photos) {
           let temp: {
             name: string;
             address: string;
@@ -39,20 +38,21 @@ export const places = (
             photoRef: string | Promise<string>;
             place_id: string;
             htmlAtt: string;
+            price: string | number
           } = {
             name: results ? results[i]?.name : '',
             address: results ? results[i]?.formatted_address : '',
             rating: results ? results[i]?.rating : '',
-            photoRef: results[i] ? await img(results[i]?.photos[0]?.photo_reference) : '',
+            photoRef: results[i]
+              ? await img(results[i]?.photos[0]?.photo_reference)
+              : '',
             place_id: results ? results[i]?.place_id : '',
             htmlAtt: results ? results[i]?.photos[0]?.html_attributions : '',
+            price: results ? await cost(results[i].rating, find) : ''
           };
-          console.log(temp)
+          console.log(temp);
           output.push(temp);
         }
-
-        // photoRef.push(results[i]?.photos[0]?.photo_reference);
-
       }
 
       display = output.sort((a, b) => b.rating - a.rating);
@@ -64,16 +64,44 @@ export const places = (
 
 // places('philadelphia', 'hotels', (error, response) => {});
 
-async function img(url: string) {
-  if(url){
-
-    const placePhotos = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${url}&key=${apiKey}`;
+async function img(input: string) {
+  if (input) {
+    const placePhotos = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${input}&key=${apiKey}`;
 
     let val = await fetch(placePhotos);
     return val.url;
-  }else {
-    return ''
+  } else {
+    return '';
   }
-
 }
 
+async function cost(rating: number, key: string) {
+  let price;
+  if(rating === null){
+    price = 'Not available'
+  }
+  if (key === 'hotel') {
+    price = rating * 30 + 30;
+  }else if (key === 'basketball') {
+    price = rating * 10 + 15;
+  }else if (key === 'soccer') {
+    price = (rating * 15) + 15;
+  } else if (key === 'Skiing') {
+    price = (rating * 40) + 30;
+  } else if (key === 'Kids-play') {
+    price = (rating * 10) + 20;
+  } else if (
+    key === 'paintballing'
+  ) {
+    price = (rating * 10) + 10;
+  } else if (key === 'volleyball') {
+    price = (rating * 10) + 10;
+  } else if(key === 'windsurfing'){
+    price = rating * 7.5 + 18
+  }else if(key === 'cinema') {
+    price = Math.floor(rating * 2 + 10)
+  }else {
+    price = rating * 5 + 10
+  }
+  return price;
+}
