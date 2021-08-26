@@ -1,8 +1,8 @@
 import fetch from 'node-fetch';
 import request from 'request';
-const apiKey = 'AIzaSyB5ogo9sggZT1Lcw30dZU50Cbkx1gUDuAs';
+const apiKey = process.env.API_KEY;
 
-const placeDetails = `https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=${apiKey}`;
+// const placeDetails = `https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=${apiKey}`;
 //input place_id
 
 //input photo ref
